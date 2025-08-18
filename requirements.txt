@@ -1,0 +1,22 @@
+# Core BBS/DTC dependencies
+py_ecc>=6.0.0
+pycryptodome>=3.15.0
+gmpy2>=2.1.0
+tabulate>=0.8.9
+base58>=2.1.0
+
+# Benchmark & Visualization
+matplotlib>=3.5.0
+seaborn>=0.12.0
+pandas>=1.4.0
+numpy>=1.21.0
+
+# Optional but recommended
+colorama>=0.4.4
+psutil>=5.9.0
+plotly>=5.0.0
+
+# Development
+pytest>=7.0.0
+black>=22.0.0
+pylint>=2.12.0
