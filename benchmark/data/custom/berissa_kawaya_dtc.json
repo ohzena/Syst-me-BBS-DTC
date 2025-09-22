@@ -1,0 +1,204 @@
+{
+  "name": "Berissa Kawaya - Digital Travel Credential",
+  "description": "Credential de voyage pour citoyenne ivoirienne de 28 ans - Scénario business trip",
+  "type": "travel",
+  "credential_holder": {
+    "full_name": "Berissa KAWAYA",
+    "age": 28,
+    "nationality": "Ivoirienne",
+    "gender": "F",
+    "birth_country": "Côte d'Ivoire"
+  },
+  "attributes": [
+    "passport_number",
+    "full_name", 
+    "nationality",
+    "birth_date",
+    "birth_place",
+    "expiry_date",
+    "issuing_country",
+    "document_type",
+    "mrz_line1",
+    "mrz_line2", 
+    "photo_hash",
+    "signature_hash",
+    "visa_status",
+    "visa_type",
+    "visa_expiry",
+    "entry_date",
+    "permitted_stay_duration",
+    "sponsor_company",
+    "purpose_of_visit",
+    "accommodation_address"
+  ],
+  "attribute_metadata": {
+    "passport_number": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Numéro de passeport ivoirien",
+      "example_value": "CI2024789456"
+    },
+    "full_name": {
+      "type": "string", 
+      "sensitive": false,
+      "description": "Nom complet du titulaire",
+      "example_value": "Berissa KAWAYA"
+    },
+    "nationality": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Nationalité du titulaire", 
+      "example_value": "Ivoirienne"
+    },
+    "birth_date": {
+      "type": "date",
+      "sensitive": true,
+      "description": "Date de naissance",
+      "example_value": "1996-03-15"
+    },
+    "birth_place": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Lieu de naissance",
+      "example_value": "Abidjan, Côte d'Ivoire"
+    },
+    "expiry_date": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Date d'expiration du passeport",
+      "example_value": "2029-03-14"
+    },
+    "issuing_country": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Pays émetteur du document",
+      "example_value": "Côte d'Ivoire"
+    },
+    "document_type": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Type de document",
+      "example_value": "Passport"
+    },
+    "mrz_line1": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Première ligne MRZ",
+      "example_value": "P<CIVKAWAYA<<Berissa<<<<<<<<<<<<<<<<<<<<<<<<"
+    },
+    "mrz_line2": {
+      "type": "string", 
+      "sensitive": true,
+      "description": "Deuxième ligne MRZ",
+      "example_value": "CI2024789456CIV9603158F2903145<<<<<<<<<<<<<<02"
+    },
+    "photo_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash de la photo d'identité",
+      "example_value": "sha256:a1b2c3d4e5f6789abcdef1234567890"
+    },
+    "signature_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash de la signature",
+      "example_value": "sha256:f6e5d4c3b2a1987654321fedcba9876"
+    },
+    "visa_status": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Statut du visa",
+      "example_value": "Valid"
+    },
+    "visa_type": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Type de visa",
+      "example_value": "Business B1"
+    },
+    "visa_expiry": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Date d'expiration du visa",
+      "example_value": "2025-12-31"
+    },
+    "entry_date": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Date d'entrée prévue",
+      "example_value": "2024-08-15"
+    },
+    "permitted_stay_duration": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Durée de séjour autorisée",
+      "example_value": "90 days"
+    },
+    "sponsor_company": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Entreprise sponsor",
+      "example_value": "TechCorp France SAS"
+    },
+    "purpose_of_visit": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Objet de la visite",
+      "example_value": "Business meetings and training"
+    },
+    "accommodation_address": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Adresse d'hébergement",
+      "example_value": "Hotel Mercure, 123 Avenue des Champs, Paris"
+    }
+  },
+  "disclosure_patterns": [
+    {
+      "name": "Contrôle frontière - Identité basique",
+      "description": "Vérification d'identité minimale aux frontières",
+      "disclosed": ["full_name", "nationality", "document_type", "expiry_date"],
+      "hidden": ["passport_number", "birth_date", "birth_place", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "visa_status", "visa_type", "visa_expiry", "entry_date", "permitted_stay_duration", "sponsor_company", "purpose_of_visit", "accommodation_address"],
+      "use_case": "Passage rapide aux frontières automatisées",
+      "privacy_level": "high"
+    },
+    {
+      "name": "Vérification visa business",
+      "description": "Contrôle pour entrée business avec visa",
+      "disclosed": ["full_name", "nationality", "visa_status", "visa_type", "visa_expiry", "purpose_of_visit", "sponsor_company"],
+      "hidden": ["passport_number", "birth_date", "birth_place", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "entry_date", "permitted_stay_duration", "accommodation_address", "issuing_country", "document_type", "expiry_date"],
+      "use_case": "Contrôle spécialisé visa business",
+      "privacy_level": "medium"
+    },
+    {
+      "name": "Contrôle douanier approfondi", 
+      "description": "Vérification complète pour douanes",
+      "disclosed": ["full_name", "nationality", "birth_date", "visa_status", "entry_date", "permitted_stay_duration", "purpose_of_visit", "accommodation_address"],
+      "hidden": ["passport_number", "birth_place", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "visa_type", "visa_expiry", "sponsor_company", "issuing_country", "document_type", "expiry_date"],
+      "use_case": "Contrôle douanier avec vérification séjour",
+      "privacy_level": "low"
+    },
+    {
+      "name": "Vérification hôtelière",
+      "description": "Check-in hôtel avec données minimales",
+      "disclosed": ["full_name", "nationality", "accommodation_address"],
+      "hidden": ["passport_number", "birth_date", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "visa_status", "visa_type", "visa_expiry", "entry_date", "permitted_stay_duration", "sponsor_company", "purpose_of_visit"],
+      "use_case": "Enregistrement hôtelier simplifié", 
+      "privacy_level": "maximum"
+    }
+  ],
+  "validation_rules": {
+    "min_disclosed_attributes": 1,
+    "max_disclosed_attributes": 15,
+    "required_attributes": ["full_name", "nationality"],
+    "forbidden_combinations": [
+      ["passport_number", "mrz_line1", "mrz_line2"],
+      ["photo_hash", "signature_hash"]
+    ]
+  },
+  "test_parameters": {
+    "attribute_variations": [4, 8, 12, 16, 20],
+    "disclosure_rate_variations": [0.2, 0.35, 0.5, 0.75],
+    "custom_iterations": 15
+  }
+}

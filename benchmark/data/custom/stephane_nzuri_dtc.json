@@ -1,0 +1,235 @@
+{
+  "name": "Stephane Nzuri - Digital Travel Credential (Mineur)",
+  "description": "Credential de voyage pour citoyen belge mineur de 15 ans - Scénario voyage scolaire",
+  "type": "travel",
+  "credential_holder": {
+    "full_name": "Stephane NZURI",
+    "age": 15,
+    "nationality": "Belge",
+    "gender": "M",
+    "birth_country": "Belgique",
+    "minor_status": true,
+    "guardian_required": true
+  },
+  "attributes": [
+    "passport_number",
+    "full_name",
+    "nationality", 
+    "birth_date",
+    "birth_place",
+    "expiry_date",
+    "issuing_country",
+    "document_type",
+    "mrz_line1",
+    "mrz_line2",
+    "photo_hash",
+    "guardian_name",
+    "guardian_contact",
+    "guardian_authorization",
+    "school_name",
+    "school_contact",
+    "trip_supervisor",
+    "group_reference",
+    "educational_purpose",
+    "return_date",
+    "emergency_contact",
+    "medical_info_hash",
+    "parental_consent_hash"
+  ],
+  "attribute_metadata": {
+    "passport_number": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Numéro de passeport belge",
+      "example_value": "BE2023654789"
+    },
+    "full_name": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Nom complet du mineur",
+      "example_value": "Stephane NZURI"
+    },
+    "nationality": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Nationalité belge",
+      "example_value": "Belge"
+    },
+    "birth_date": {
+      "type": "date",
+      "sensitive": true,
+      "description": "Date de naissance (mineur)",
+      "example_value": "2009-07-22"
+    },
+    "birth_place": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Lieu de naissance",
+      "example_value": "Bruxelles, Belgique"
+    },
+    "expiry_date": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Expiration passeport (mineur - 5 ans)",
+      "example_value": "2028-07-21"
+    },
+    "issuing_country": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Pays émetteur",
+      "example_value": "Belgique"
+    },
+    "document_type": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Type de document",
+      "example_value": "Passport (Minor)"
+    },
+    "mrz_line1": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Première ligne MRZ",
+      "example_value": "P<BELNZURI<<STEPHANE<<<<<<<<<<<<<<<<<<<<<<<"
+    },
+    "mrz_line2": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Deuxième ligne MRZ",
+      "example_value": "BE2023654789BEL0907228M2807213<<<<<<<<<<<<<<04"
+    },
+    "photo_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash photo d'identité",
+      "example_value": "sha256:abc123def456789fedcba0987654321"
+    },
+    "guardian_name": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Nom du tuteur légal",
+      "example_value": "Marie NZURI"
+    },
+    "guardian_contact": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Contact du tuteur",
+      "example_value": "+32 2 123 45 67"
+    },
+    "guardian_authorization": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash autorisation parentale",
+      "example_value": "sha256:parent_auth_987654321abcdef"
+    },
+    "school_name": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Nom de l'établissement scolaire",
+      "example_value": "Collège Saint-Michel, Bruxelles"
+    },
+    "school_contact": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Contact école",
+      "example_value": "+32 2 987 65 43"
+    },
+    "trip_supervisor": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Responsable du voyage",
+      "example_value": "Prof. Jean DUBOIS"
+    },
+    "group_reference": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Référence du groupe scolaire",
+      "example_value": "VOYAGE-2024-PARIS-GRP7"
+    },
+    "educational_purpose": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Objectif pédagogique",
+      "example_value": "Visite culturelle musées parisiens"
+    },
+    "return_date": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Date de retour prévue",
+      "example_value": "2024-08-25"
+    },
+    "emergency_contact": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Contact d'urgence",
+      "example_value": "+32 479 12 34 56"
+    },
+    "medical_info_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash informations médicales",
+      "example_value": "sha256:medical_456789abcdef123"
+    },
+    "parental_consent_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash consentement parental",
+      "example_value": "sha256:consent_123abc789def456"
+    }
+  },
+  "disclosure_patterns": [
+    {
+      "name": "Contrôle frontière mineur",
+      "description": "Contrôle spécialisé pour mineur en voyage scolaire",
+      "disclosed": ["full_name", "nationality", "birth_date", "document_type", "school_name", "trip_supervisor", "group_reference"],
+      "hidden": ["passport_number", "birth_place", "mrz_line1", "mrz_line2", "photo_hash", "guardian_name", "guardian_contact", "guardian_authorization", "school_contact", "educational_purpose", "return_date", "emergency_contact", "medical_info_hash", "parental_consent_hash", "expiry_date", "issuing_country"],
+      "use_case": "Passage frontière pour groupe scolaire",
+      "privacy_level": "medium"
+    },
+    {
+      "name": "Vérification accompagnateur",
+      "description": "Validation présence accompagnateur agréé",
+      "disclosed": ["full_name", "birth_date", "trip_supervisor", "group_reference", "school_name"],
+      "hidden": ["passport_number", "nationality", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "guardian_name", "guardian_contact", "guardian_authorization", "school_contact", "educational_purpose", "return_date", "emergency_contact", "medical_info_hash", "parental_consent_hash"],
+      "use_case": "Contrôle supervision mineurs",
+      "privacy_level": "high"
+    },
+    {
+      "name": "Urgence médicale",
+      "description": "Accès données urgence en cas de nécessité",
+      "disclosed": ["full_name", "birth_date", "guardian_name", "guardian_contact", "emergency_contact", "medical_info_hash", "trip_supervisor"],
+      "hidden": ["passport_number", "nationality", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "guardian_authorization", "school_name", "school_contact", "group_reference", "educational_purpose", "return_date", "parental_consent_hash"],
+      "use_case": "Situation d'urgence médicale",
+      "privacy_level": "low"
+    },
+    {
+      "name": "Vérification hébergement jeunesse",
+      "description": "Check-in auberge de jeunesse ou hébergement groupe",
+      "disclosed": ["full_name", "birth_date", "school_name", "trip_supervisor", "return_date"],
+      "hidden": ["passport_number", "nationality", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "guardian_name", "guardian_contact", "guardian_authorization", "school_contact", "group_reference", "educational_purpose", "emergency_contact", "medical_info_hash", "parental_consent_hash"],
+      "use_case": "Enregistrement hébergement collectif",
+      "privacy_level": "high"
+    },
+    {
+      "name": "Autorisation parentale complète",
+      "description": "Vérification autorisation parentale en cas de contrôle approfondi",
+      "disclosed": ["full_name", "birth_date", "guardian_name", "guardian_authorization", "parental_consent_hash", "educational_purpose", "return_date"],
+      "hidden": ["passport_number", "nationality", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "guardian_contact", "school_name", "school_contact", "trip_supervisor", "group_reference", "emergency_contact", "medical_info_hash"],
+      "use_case": "Contrôle autorisation parentale",
+      "privacy_level": "medium"
+    }
+  ],
+  "validation_rules": {
+    "min_disclosed_attributes": 2,
+    "max_disclosed_attributes": 12,
+    "required_attributes": ["full_name", "birth_date", "trip_supervisor"],
+    "forbidden_combinations": [
+      ["guardian_name", "guardian_contact", "emergency_contact"],
+      ["medical_info_hash", "parental_consent_hash"]
+    ]
+  },
+  "test_parameters": {
+    "attribute_variations": [5, 10, 15, 20, 23],
+    "disclosure_rate_variations": [0.25, 0.4, 0.6, 0.8],
+    "custom_iterations": 12
+  }
+}

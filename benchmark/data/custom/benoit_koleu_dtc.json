@@ -1,0 +1,315 @@
+{
+  "name": "Benoit Koleu - Digital Travel Credential (Senior Executive)",
+  "description": "Credential de voyage pour citoyen japonais de 58 ans - Scénario business executive international",
+  "type": "travel",
+  "credential_holder": {
+    "full_name": "Benoit KOLEU",
+    "age": 58,
+    "nationality": "Japonaise",
+    "gender": "M",
+    "birth_country": "Japon",
+    "executive_status": true,
+    "frequent_traveler": true,
+    "diplomatic_immunity": false
+  },
+  "attributes": [
+    "passport_number",
+    "full_name",
+    "nationality",
+    "birth_date",
+    "birth_place",
+    "expiry_date",
+    "issuing_country",
+    "document_type",
+    "mrz_line1",
+    "mrz_line2",
+    "photo_hash",
+    "signature_hash",
+    "biometric_data_hash",
+    "visa_status",
+    "visa_type",
+    "visa_expiry",
+    "multiple_entry",
+    "previous_entries_count",
+    "company_name",
+    "company_address",
+    "job_title",
+    "business_purpose",
+    "meeting_companies",
+    "local_contact_person",
+    "accommodation_hotel",
+    "accommodation_address",
+    "return_flight_date",
+    "travel_insurance_number",
+    "health_declaration_hash",
+    "customs_declaration_pre",
+    "frequent_traveler_number",
+    "diplomatic_status",
+    "special_assistance_needed"
+  ],
+  "attribute_metadata": {
+    "passport_number": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Numéro de passeport japonais",
+      "example_value": "JP20241234567"
+    },
+    "full_name": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Nom complet",
+      "example_value": "Benoit KOLEU"
+    },
+    "nationality": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Nationalité japonaise",
+      "example_value": "Japonaise"
+    },
+    "birth_date": {
+      "type": "date",
+      "sensitive": true,
+      "description": "Date de naissance",
+      "example_value": "1966-04-12"
+    },
+    "birth_place": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Lieu de naissance",
+      "example_value": "Tokyo, Japon"
+    },
+    "expiry_date": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Date d'expiration passeport",
+      "example_value": "2034-04-11"
+    },
+    "issuing_country": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Pays émetteur",
+      "example_value": "Japon"
+    },
+    "document_type": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Type de document",
+      "example_value": "Passport (Executive)"
+    },
+    "mrz_line1": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Première ligne MRZ",
+      "example_value": "P<JPNKOLEU<<BENOIT<<<<<<<<<<<<<<<<<<<<<<<<"
+    },
+    "mrz_line2": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Deuxième ligne MRZ",
+      "example_value": "JP20241234567JPN6604128M3404113<<<<<<<<<<<<<<08"
+    },
+    "photo_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash photo d'identité",
+      "example_value": "sha256:exec_photo_789abc123def456"
+    },
+    "signature_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash signature",
+      "example_value": "sha256:exec_sign_456def789abc123"
+    },
+    "biometric_data_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash données biométriques",
+      "example_value": "sha256:bio_data_123456789abcdef"
+    },
+    "visa_status": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Statut visa",
+      "example_value": "Valid Multiple Entry"
+    },
+    "visa_type": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Type de visa business",
+      "example_value": "Business B1/B2 Multiple"
+    },
+    "visa_expiry": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Expiration visa",
+      "example_value": "2026-12-31"
+    },
+    "multiple_entry": {
+      "type": "boolean",
+      "sensitive": false,
+      "description": "Autorisation entrées multiples",
+      "example_value": "true"
+    },
+    "previous_entries_count": {
+      "type": "number",
+      "sensitive": false,
+      "description": "Nombre d'entrées précédentes",
+      "example_value": "47"
+    },
+    "company_name": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Nom de l'entreprise",
+      "example_value": "Mitsubishi Global Trading Corp."
+    },
+    "company_address": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Adresse entreprise",
+      "example_value": "1-6-1 Marunouchi, Chiyoda-ku, Tokyo 100-8086"
+    },
+    "job_title": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Titre professionnel",
+      "example_value": "Senior Vice President, International Operations"
+    },
+    "business_purpose": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Objet du voyage d'affaires",
+      "example_value": "Strategic partnership negotiations and board meetings"
+    },
+    "meeting_companies": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Entreprises à rencontrer",
+      "example_value": "BMW Group, Siemens AG, Deutsche Bank"
+    },
+    "local_contact_person": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Contact local",
+      "example_value": "Dr. Hans MUELLER, BMW Group"
+    },
+    "accommodation_hotel": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Hôtel de séjour",
+      "example_value": "Hotel Adlon Kempinski Berlin"
+    },
+    "accommodation_address": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Adresse hébergement",
+      "example_value": "Unter den Linden 77, 10117 Berlin"
+    },
+    "return_flight_date": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Date vol retour",
+      "example_value": "2024-09-15"
+    },
+    "travel_insurance_number": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Numéro assurance voyage",
+      "example_value": "MITSUI-TRAVEL-2024-789456"
+    },
+    "health_declaration_hash": {
+      "type": "hash",
+      "sensitive": true,
+      "description": "Hash déclaration santé",
+      "example_value": "sha256:health_decl_abc789def456"
+    },
+    "customs_declaration_pre": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Pré-déclaration douanière",
+      "example_value": "Business documents only, no goods to declare"
+    },
+    "frequent_traveler_number": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Numéro voyageur fréquent",
+      "example_value": "EXEC-TRAVELER-JP-58947"
+    },
+    "diplomatic_status": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Statut diplomatique",
+      "example_value": "None (Corporate Executive)"
+    },
+    "special_assistance_needed": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Assistance spéciale requise",
+      "example_value": "None required"
+    }
+  },
+  "disclosure_patterns": [
+    {
+      "name": "Fast Track Executive",
+      "description": "Passage rapide réservé aux executives fréquents",
+      "disclosed": ["full_name", "nationality", "frequent_traveler_number", "company_name", "job_title", "previous_entries_count"],
+      "hidden": ["passport_number", "birth_date", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "biometric_data_hash", "visa_status", "visa_type", "visa_expiry", "multiple_entry", "company_address", "business_purpose", "meeting_companies", "local_contact_person", "accommodation_hotel", "accommodation_address", "return_flight_date", "travel_insurance_number", "health_declaration_hash", "customs_declaration_pre", "diplomatic_status", "special_assistance_needed"],
+      "use_case": "Voie rapide pour executives",
+      "privacy_level": "high"
+    },
+    {
+      "name": "Contrôle business standard",
+      "description": "Vérification standard pour voyage d'affaires",
+      "disclosed": ["full_name", "nationality", "visa_status", "visa_type", "business_purpose", "company_name", "local_contact_person", "return_flight_date"],
+      "hidden": ["passport_number", "birth_date", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "biometric_data_hash", "visa_expiry", "multiple_entry", "previous_entries_count", "company_address", "meeting_companies", "accommodation_hotel", "accommodation_address", "travel_insurance_number", "health_declaration_hash", "customs_declaration_pre", "frequent_traveler_number", "diplomatic_status", "special_assistance_needed"],
+      "use_case": "Contrôle immigration business",
+      "privacy_level": "medium"
+    },
+    {
+      "name": "Vérification douanière executive",
+      "description": "Contrôle douanier pour executive avec pré-déclaration",
+      "disclosed": ["full_name", "company_name", "job_title", "customs_declaration_pre", "business_purpose", "meeting_companies"],
+      "hidden": ["passport_number", "nationality", "birth_date", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "biometric_data_hash", "visa_status", "visa_type", "visa_expiry", "multiple_entry", "previous_entries_count", "company_address", "local_contact_person", "accommodation_hotel", "accommodation_address", "return_flight_date", "travel_insurance_number", "health_declaration_hash", "frequent_traveler_number", "diplomatic_status", "special_assistance_needed"],
+      "use_case": "Passage douanier simplifié",
+      "privacy_level": "high"
+    },
+    {
+      "name": "Check-in hôtel executive",
+      "description": "Enregistrement hôtel avec services executive",
+      "disclosed": ["full_name", "company_name", "accommodation_hotel", "return_flight_date", "special_assistance_needed"],
+      "hidden": ["passport_number", "nationality", "birth_date", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "biometric_data_hash", "visa_status", "visa_type", "visa_expiry", "multiple_entry", "previous_entries_count", "company_address", "job_title", "business_purpose", "meeting_companies", "local_contact_person", "accommodation_address", "travel_insurance_number", "health_declaration_hash", "customs_declaration_pre", "frequent_traveler_number", "diplomatic_status"],
+      "use_case": "Services hôteliers premium",
+      "privacy_level": "high"
+    },
+    {
+      "name": "Urgence médicale executive",
+      "description": "Accès données urgence avec assurance premium",
+      "disclosed": ["full_name", "birth_date", "health_declaration_hash", "travel_insurance_number", "company_name", "local_contact_person", "accommodation_address"],
+      "hidden": ["passport_number", "nationality", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "biometric_data_hash", "visa_status", "visa_type", "visa_expiry", "multiple_entry", "previous_entries_count", "company_address", "job_title", "business_purpose", "meeting_companies", "accommodation_hotel", "return_flight_date", "customs_declaration_pre", "frequent_traveler_number", "diplomatic_status", "special_assistance_needed"],
+      "use_case": "Urgence médicale avec assurance premium",
+      "privacy_level": "low"
+    },
+    {
+      "name": "Audit sécurité approfondi",
+      "description": "Contrôle sécuritaire complet pour executive senior",
+      "disclosed": ["full_name", "nationality", "birth_date", "company_name", "job_title", "business_purpose", "meeting_companies", "previous_entries_count", "frequent_traveler_number", "diplomatic_status"],
+      "hidden": ["passport_number", "birth_place", "expiry_date", "issuing_country", "document_type", "mrz_line1", "mrz_line2", "photo_hash", "signature_hash", "biometric_data_hash", "visa_status", "visa_type", "visa_expiry", "multiple_entry", "company_address", "local_contact_person", "accommodation_hotel", "accommodation_address", "return_flight_date", "travel_insurance_number", "health_declaration_hash", "customs_declaration_pre", "special_assistance_needed"],
+      "use_case": "Audit sécurité pour personnel senior",
+      "privacy_level": "low"
+    }
+  ],
+  "validation_rules": {
+    "min_disclosed_attributes": 3,
+    "max_disclosed_attributes": 20,
+    "required_attributes": ["full_name", "nationality", "company_name"],
+    "forbidden_combinations": [
+      ["passport_number", "mrz_line1", "mrz_line2", "biometric_data_hash"],
+      ["accommodation_hotel", "accommodation_address"],
+      ["health_declaration_hash", "travel_insurance_number"]
+    ]
+  },
+  "test_parameters": {
+    "attribute_variations": [6, 12, 18, 24, 30, 33],
+    "disclosure_rate_variations": [0.15, 0.3, 0.45, 0.6, 0.8],
+    "custom_iterations": 18
+  }
+}

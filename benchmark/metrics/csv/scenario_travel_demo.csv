@@ -1,0 +1,2 @@
+scenario_name,success,iterations,attributes_count,disclosed_count,avg_execution_time_ms,min_time_ms,max_time_ms,real_demo_used,profile_name,profile_type
+travel_demo,True,1,23,7,6712.303834,6712.303834,6712.303834,True,Unknown,generic

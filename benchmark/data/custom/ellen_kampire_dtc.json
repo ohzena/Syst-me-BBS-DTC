@@ -1,0 +1,151 @@
+{
+  "name": "Ellen Kampire - Default Digital Travel Credential",
+  "description": "Default credential for benchmarks and demos - 10 attributes with 50% disclosure",
+  "type": "travel",
+  "credential_holder": {
+    "full_name": "Ellen KAMPIRE",
+    "age": 32,
+    "nationality": "Rwandan",
+    "gender": "F",
+    "birth_country": "Rwanda"
+  },
+  "attributes": [
+    "passport_number",
+    "full_name",
+    "nationality",
+    "birth_date",
+    "expiry_date",
+    "issuing_country",
+    "document_type",
+    "visa_status",
+    "entry_date",
+    "purpose_of_visit"
+  ],
+  "attribute_metadata": {
+    "passport_number": {
+      "type": "string",
+      "sensitive": true,
+      "description": "Rwandan passport number",
+      "example_value": "RW2024567890"
+    },
+    "full_name": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Full name of credential holder",
+      "example_value": "Ellen KAMPIRE"
+    },
+    "nationality": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Nationality of holder",
+      "example_value": "Rwandan"
+    },
+    "birth_date": {
+      "type": "date",
+      "sensitive": true,
+      "description": "Date of birth",
+      "example_value": "1992-07-15"
+    },
+    "expiry_date": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Passport expiry date",
+      "example_value": "2030-07-14"
+    },
+    "issuing_country": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Country that issued the document",
+      "example_value": "Rwanda"
+    },
+    "document_type": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Type of travel document",
+      "example_value": "Passport"
+    },
+    "visa_status": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Current visa status",
+      "example_value": "Valid"
+    },
+    "entry_date": {
+      "type": "date",
+      "sensitive": false,
+      "description": "Expected entry date",
+      "example_value": "2024-09-01"
+    },
+    "purpose_of_visit": {
+      "type": "string",
+      "sensitive": false,
+      "description": "Purpose of travel",
+      "example_value": "Tourism"
+    }
+  },
+  "disclosure_patterns": [
+    {
+      "name": "Default 50% Disclosure",
+      "description": "Standard benchmark pattern with 50% selective disclosure",
+      "disclosed": ["full_name", "nationality", "document_type", "visa_status", "purpose_of_visit"],
+      "hidden": ["passport_number", "birth_date", "expiry_date", "issuing_country", "entry_date"],
+      "use_case": "Standard benchmark and demo scenario",
+      "privacy_level": "medium"
+    },
+    {
+      "name": "Minimal Disclosure",
+      "description": "Minimum information for basic verification",
+      "disclosed": ["full_name", "nationality"],
+      "hidden": ["passport_number", "birth_date", "expiry_date", "issuing_country", "document_type", "visa_status", "entry_date", "purpose_of_visit"],
+      "use_case": "Quick identity check",
+      "privacy_level": "high"
+    },
+    {
+      "name": "Border Control",
+      "description": "Standard border control verification",
+      "disclosed": ["full_name", "nationality", "document_type", "expiry_date", "visa_status", "entry_date"],
+      "hidden": ["passport_number", "birth_date", "issuing_country", "purpose_of_visit"],
+      "use_case": "Immigration checkpoint",
+      "privacy_level": "medium"
+    },
+    {
+      "name": "Full Disclosure",
+      "description": "Complete credential disclosure for testing",
+      "disclosed": ["passport_number", "full_name", "nationality", "birth_date", "expiry_date", "issuing_country", "document_type", "visa_status", "entry_date", "purpose_of_visit"],
+      "hidden": [],
+      "use_case": "Full verification or testing",
+      "privacy_level": "low"
+    }
+  ],
+  "validation_rules": [
+    {
+      "attribute": "_global",
+      "rule": "min_disclosed",
+      "value": 1
+    },
+    {
+      "attribute": "_global",
+      "rule": "max_disclosed",
+      "value": 10
+    },
+    {
+      "attribute": "_global",
+      "rule": "required_attributes",
+      "value": ["full_name", "nationality"]
+    }
+  ],
+  "test_parameters": {
+    "attribute_variations": [1, 2, 4, 8, 10, 16, 32, 64, 128],
+    "disclosure_rate_variations": [0, 10, 15, 25, 50, 75, 100],
+    "custom_iterations": 15,
+    "measure_memory": true
+  },
+  "benchmark_notes": {
+    "default_user": true,
+    "optimized_for": "benchmarking",
+    "disclosure_rate": 0.5,
+    "total_attributes": 10,
+    "disclosed_count": 5,
+    "hidden_count": 5
+  }
+}
